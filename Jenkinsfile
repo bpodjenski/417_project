@@ -31,7 +31,10 @@ pipeline {
             steps {
                 echo "Running tests..."
                 // Run tests using Maven and collect test reports
-                sh 'mvn test'
+                sh '''
+                cd triangle-example
+                mvn test
+                '''
                 junit 'target/surefire-reports/**/*.xml'
             }
         }
