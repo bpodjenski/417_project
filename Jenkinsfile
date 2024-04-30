@@ -17,13 +17,13 @@ pipeline {
                 echo "Building Code..."
                 // Compile your Java code using Maven
                 sh 'mvn clean package'
+                echo "Build Commplete!"
             }
-            echo "Build Commplete!"
 
         }
         stage('Test') {
             steps {
-                 echo "Running tests..."
+                echo "Running tests..."
                 // Run tests using Maven and collect test reports
                 sh 'mvn test'
                 junit 'target/surefire-reports/**/*.xml'
