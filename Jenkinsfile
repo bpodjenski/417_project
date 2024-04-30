@@ -5,13 +5,13 @@ pipeline {
         pollSCM '* * * * *'
     }
     stages {
-        stage('Checkout') {
-            echo "Checking out code..."
-            steps {
-                // Checkout your source code from version control
-                git 'https://github.com/bpodjenski/417_project.git'
-            }
-        }
+        // stage('Checkout') {
+        //     echo "Checking out code..."
+        //     steps {
+        //         // Checkout your source code from version control
+        //         git 'https://github.com/bpodjenski/417_project.git'
+        //     }
+        // }
         stage('Build') {
             echo "Building Code..."
             steps {
