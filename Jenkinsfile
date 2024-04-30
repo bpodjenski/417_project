@@ -16,7 +16,12 @@ pipeline {
             steps {
                 echo "Building Code..."
                 // Compile your Java code using Maven
-                sh 'mvn clean package'
+                sh '''
+                cd triangle-example
+                sudo apt-get update
+                sudo apt-get install maven
+                mvn clean package
+                '''
                 echo "Build Commplete!"
             }
 
