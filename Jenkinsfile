@@ -1,6 +1,14 @@
 pipeline {
-    agent any
-
+    agent {
+        docker {
+            // Reference the label of the Docker agent template
+            label 'docker-mvn-agent'
+            // Specify the Docker image to use
+            image 'maven:latest'
+            // Mount the Maven cache directory to speed up builds
+            args '-v $HOME/.m2:/root/.m2'
+        }
+    }
     triggers {
         pollSCM '* * * * *'
     }
