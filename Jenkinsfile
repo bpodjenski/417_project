@@ -35,7 +35,6 @@ pipeline {
                 cd triangle-example
                 mvn test
                 '''
-                junit 'target/surefire-reports/**/*.xml'
             }
         }
         // You can add additional stages as needed, such as deployment or notification stages
