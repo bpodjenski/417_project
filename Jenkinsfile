@@ -14,7 +14,8 @@ pipeline {
                 // Compile your Java code using Maven
                 sh '''
                 cd triangle-example
-                mvn clean package
+                mvn clean
+                mvn build
                 '''
                 echo "Build Commplete!"
             }
